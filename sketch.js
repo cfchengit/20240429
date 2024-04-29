@@ -33,7 +33,7 @@ function draw() {
       for(var y=0;y<captureGraphics.height ; y=y+span){
         var pixel = captureGraphics.get(x,y)
         fill(pixel)
-        if(radioElement.value()=="方塊"){
+        if(radioElement.value()=="方塊" || radioElement.value()==""){
           rect(x,y,span)
         }
         if(radioElement.value()=="圓圈"){
