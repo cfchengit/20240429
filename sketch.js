@@ -1,4 +1,5 @@
 var captureGraphics
+var radioElement
 var capture_width = 640
 var capture_height = 480
 var span = 5
@@ -16,8 +17,9 @@ function setup() {
   radioElement.option("方塊")
   radioElement.option("圓圈")
   radioElement.style("color","#fff")
-  // radioElement.style("font-size",30)
-  
+  radioElement.style("font-size","30px")
+
+
 }
 
 function draw() {
@@ -37,6 +39,7 @@ function draw() {
         if(radioElement.value()=="圓圈"){
           ellipse(x,y,span)
         }
+        
       }
     }
   pop()
