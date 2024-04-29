@@ -8,13 +8,16 @@ function setup() {
   capture.size(capture_width,capture_height);//設定顯示畫面大小
   captureGraphics = createGraphics(capture_width,capture_height)
   captureGraphics.translate(capture_width,0)
-  captureGraphics.scale(-1,1) 
-  capture.hide()
+  captureGraphics.scale(-1,1)
+  capture.hide() 
+  //---選鈕的介面
+  
 }
 
 function draw() {
-  background(220);
+  background(0);
   noStroke()
+  span = 5+map(mouseX,0,width,0,20)
   push()
     translate(width/2-capture_width/2,height/2-capture_height/2) //把原點移到(width/2-160,height/2-120)
     captureGraphics.image(capture,0,0)  //在(0, 0)   
@@ -23,6 +26,7 @@ function draw() {
         var pixel = captureGraphics.get(x,y)
         fill(pixel)
         rect(x,y,span)
+        // ellipse(x,y,span)
       }
     }
   pop()
